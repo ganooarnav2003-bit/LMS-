@@ -1,0 +1,13 @@
+{
+  "name": "dempo-learn",
+  "version": "1.0.0",
+  "description": "Dempo Learn — an exam-grade, India-hosted LMS for a 2,000-student college.",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server/index.js",
+    "seed": "node server/seed.js --reset",
+    "test": "node --test \"test/*.test.js\""
+  }
+}
