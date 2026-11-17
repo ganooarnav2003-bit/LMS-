@@ -451,5 +451,5 @@ export function createApp(db) {
       send(res, 200, buf, MIME[extname(file)] || 'application/octet-stream');
     } catch { send(res, 404, 'Not found', 'text/plain'); }
   }
-  return createServer(handle);
+  const server = createServer(handle); server.handler = handle; return server;
 }

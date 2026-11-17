@@ -45,3 +45,6 @@ Teal + saffron identity, serif headings/system sans body (no web fonts, by desig
 - Single process, SQLite: fine for 2,000 students, not for multiple servers. Back up `data/`.
 - Rate-limiting is in-memory; put it behind HTTPS and a reverse proxy in production (cookies are `HttpOnly; SameSite=Strict`, add `Secure` behind TLS).
 - Privacy notice has `TODO` placeholders (retention period, grievance officer) the college must fill.
+
+## Deploying to Vercel (demo only)
+Import the repo in Vercel (framework preset: *Other*, no build command). `api/index.js` + `vercel.json` serve the API as a function and `public/` as static files. **Data is ephemeral** (SQLite in `/tmp`, reseeded on cold starts, not shared across instances), so use it for demos only. For real use run `npm start` on a persistent server in India, which is what the data-residency promise depends on.
